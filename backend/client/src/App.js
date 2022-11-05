@@ -13,7 +13,7 @@ const App = () => {
     <>
       <NoteState>
         <BrowserRouter>
-          <Navbar title={"MyBook"} />
+          <Navbar title={"MyNoteBook"} />
           <div className="container m-auto">
             <Routes>
               <Route path="/" element={<Home />} />
