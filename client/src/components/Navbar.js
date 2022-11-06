@@ -33,7 +33,6 @@ const Navbar = ({title}) => {
       } else if(headerRef.current.classList.contains('h-72')){
         headerRef.current.classList.replace('h-72', 'h-16')
       }
-      console.log(headerRef.current);
     }
     
     const closeNav = () => {

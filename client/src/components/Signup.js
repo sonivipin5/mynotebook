@@ -5,7 +5,7 @@ import { AiOutlineUserAdd } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const host = "http://localhost:5000";
+  const API_URI =  `https://vipmynotebook.herokuapp.com`;
     const [credentials, setCredentials] = useState({name:"", email:"", password:"", cPassword:""});
   
     const navigate = useNavigate()
@@ -17,7 +17,7 @@ const Signup = () => {
         return
       }
       const {name, email, password} = credentials;
-        let response = await fetch(`${host}/api/auth/createuser`, {
+        let response = await fetch(`${API_URI}/api/auth/createuser`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -29,7 +29,7 @@ const Signup = () => {
           if(json.authtoken){
             toast.success('SingUp Successful')
             // redirect
-            localStorage.setItem("JWT", json.authtoken)
+            localStorage.setItem("token", json.authtoken)
             setTimeout(() => {
               navigate('/')
               
@@ -41,7 +41,6 @@ const Signup = () => {
       }
       const OnChange = (e) => {
         setCredentials({...credentials, [e.target.name]:e.target.value})
-        console.log(credentials)
       }
       const input ="mb-3 border border-gray-400 outline-none rounded-md my-1 w-full indent-1 font-normal"
   return (

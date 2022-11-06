@@ -1,13 +1,11 @@
 {
-  "name": "inotebook-backend",
+  "name": "notebook",
   "version": "1.0.0",
-  "description": "this is a cloud saving inotebook",
+  "description": "this is a cloud saving notebook",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start":"node index.js",
-    "dev": "nodemon index.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false yarn --prefix client && yarn build --prefix client"
+    "start": "node index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -19,7 +17,7 @@
     "mongoose": "^6.6.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "tailwindcss": "^3.1.8"
-  }
+    "nodemon": "^2.0.20"
+  },
+  "author": "vipin soni"
 }

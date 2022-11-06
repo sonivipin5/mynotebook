@@ -1,14 +1,14 @@
+
 import React from 'react'
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react'
 import { CgLogIn } from 'react-icons/cg'
 import { useNavigate } from 'react-router-dom';
 
-
-
 const Login = () => {
-    const host = "http://localhost:5000";
+    const API_URI =  'https://vipmynotebook.herokuapp.com'
     const [credentials, setCredentials] = useState({email:"", password:""});
     const navigate = useNavigate()
     const OnChange = (e) => {
@@ -16,7 +16,7 @@ const Login = () => {
       }
     const submit = async(e) => {
         e.preventDefault()
-        let response = await fetch(`${host}/api/auth/login`, {
+        let response = await fetch(`${API_URI}/api/auth/login`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
